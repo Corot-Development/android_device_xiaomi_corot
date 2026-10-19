@@ -276,7 +276,6 @@ vendor/lib64/mt6985/libaiawb_moon_model.so;SYMLINK=vendor/lib64/libaiawb_moon_mo
 vendor/lib64/mt6985/libaiawb_p1ggm.so;SYMLINK=vendor/lib64/libaiawb_p1ggm.so
 vendor/lib64/mt6985/libaiawb_sun.so;SYMLINK=vendor/lib64/libaiawb_sun.so
 vendor/lib64/mt6985/libaiawb_sun_model.so;SYMLINK=vendor/lib64/libaiawb_sun_model.so
-vendor/lib64/mt6985/libaibc_tuning.so;SYMLINK=vendor/lib64/libaibc_tuning.so
 vendor/lib64/mt6985/libaibc_tuning_p2.so;SYMLINK=vendor/lib64/libaibc_tuning_p2.so
 vendor/lib64/mt6985/libaibc_tuning_p3.so;SYMLINK=vendor/lib64/libaibc_tuning_p3.so
 vendor/lib64/mt6985/libaibc_tuning_p4.so;SYMLINK=vendor/lib64/libaibc_tuning_p4.so
