@@ -17,9 +17,25 @@ from extract_utils.main import (
     ExtractUtilsModule,
 )
 
+_displayservice_ping = (
+    b'_ZN7lineage10frameworks14displayservice4V1_014IEventCallback4pingEv'
+)
+_displayservice_unresolved = (
+    rb'_ZN7lineage10frameworks14displayservice4V1_01[45]I[A-Za-z0-9_]*'
+    rb'(?:linkToDeath|unlinkToDeath|getDebugInfo|getHashChain|'
+    rb'interfaceChain|interfaceDescriptor|5debug|registerForNotifications)'
+    rb'[A-Za-z0-9_]*'
+)
+_displayservice_ctor_vtable = (
+    rb'_ZTCN[A-Za-z0-9_]+E\d+_'
+    rb'N7lineage10frameworks14displayservice4V1_01[45]I[A-Za-z0-9_]*E'
+)
+
 namespace_imports = [
     'device/xiaomi/corot',
     'hardware/mediatek',
+    'hardware/mediatek/libion_mtk',
+    'hardware/mediatek/libmtkperf_client',
     'hardware/xiaomi',
 ]
 
@@ -29,7 +45,8 @@ lib_fixups: lib_fixups_user_type = {
 
 blob_fixups: blob_fixups_user_type = {
     'odm/lib64/libmt_mitee@1.3.so': blob_fixup()
-        .replace_needed('android.hardware.security.keymint-V2-ndk.so', 'android.hardware.security.keymint-V4-ndk.so'),
+        .replace_needed('android.hardware.security.keymint-V2-ndk.so', 'android.hardware.security.keymint-V4-ndk-v34.so')
+        .replace_needed('libkeymint_support.so', 'libkeymint_support_V4.so'),
 
     ('vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc'): blob_fixup()
         .regex_replace('start', 'enable'),
@@ -38,7 +55,7 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.graphics.composer@2.1-resources.so', 'android.hardware.graphics.composer@2.1-resources-v34.so'),
 
     'vendor/bin/hw/android.hardware.security.keymint@2.0-service.mitee': blob_fixup()
-        .replace_needed('android.hardware.security.keymint-V2-ndk.so', 'android.hardware.security.keymint-V3-ndk.so')
+        .replace_needed('android.hardware.security.keymint-V2-ndk.so', 'android.hardware.security.keymint-V4-ndk-v34.so')
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
 
     'vendor/firmware/txpowerctrl.cfg': blob_fixup()
@@ -87,6 +104,67 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.graphics.common-V3-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     ('vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk', 'vendor/lib64/libnvram.so', 'vendor/lib64/libtflite_mtk.so'): blob_fixup()
         .add_needed('libbase_shim.so'),
+    ('vendor/lib64/libcodec2_mtk_vdec.so', 'vendor/lib64/libcodec2_mtk_venc.so'): blob_fixup()
+        .replace_needed('libformatter.so', 'libformatter_mtk.so'),
+
+
+('vendor/bin/hw/android.hardware.gnss-service.mediatek',
+	'vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so'): blob_fixup()
+    .replace_needed('android.hardware.gnss-V1-ndk_platform.so','android.hardware.gnss-V1-ndk.so'),
+
+('vendor/lib64/mt6985/lib3a.flash.so',
+     'vendor/lib64/mt6985/lib3a.sensors.color.so',
+     'vendor/lib64/mt6985/lib3a.sensors.flicker.so'): blob_fixup()
+        .add_needed('liblog.so'),
+
+'vendor/lib64/hw/sensors.mediatek.V2.0.so': blob_fixup()
+       .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
+
+('vendor/lib64/libcodec2_mtk_c2store.so', 'vendor/lib64/libcodec2_vpp_gc_plugin.so', 'vendor/lib64/libcodec2_vpp_qt_plugin.so', 'vendor/lib64/libcodec2_vpp_rs_plugin.so'): blob_fixup()
+        .replace_needed('libcodec2_soft_common.so', 'libcodec2_soft_common-v31.so')
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk-v31.so')
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so')
+        .replace_needed('libsfplugin_ccodec_utils.so', 'libsfplugin_ccodec_utils-v31.so'),
+
+'vendor/lib64/libdolbyplugin.so': blob_fixup()
+        .replace_needed('libcodec2_hidl@1.0.so', 'libcodec2_hidl@1.0-v31.so')
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk-v31.so')
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so')
+        .replace_needed('libui.so', 'libui-v32.so'),
+
+'vendor/lib64/mt6985/libmtkcam_hal_android_app_cbadaptor.so': blob_fixup()
+        .replace_needed('android.frameworks.displayservice@1.0.so',
+                        'lineage.frameworks.displayservice@1.0.so')
+        .binary_regex_replace(
+            b'7android10frameworks14displayservice',
+            b'7lineage10frameworks14displayservice')
+        .binary_regex_replace(
+            _displayservice_unresolved,
+            lambda m: _displayservice_ping.ljust(len(m.group(0)), b'\x00'))
+        .binary_regex_replace(
+            _displayservice_ctor_vtable,
+            lambda m: _displayservice_ping.ljust(len(m.group(0)), b'\x00')),
+
+('vendor/lib64/mt6985/libmtkcam_stdutils.so',
+     'vendor/lib64/hw/mt6985/android.hardware.camera.provider@2.6-impl-mediatek.so'): blob_fixup()
+        .replace_needed('libutils.so', 'libutils-v32.so'),
+
+'vendor/etc/libnfc-nci.conf': blob_fixup()
+        .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0'),
+
+('vendor/etc/libnfc-nxp.conf'): blob_fixup()
+        .regex_replace('(NXPLOG_.*_LOGLEVEL)=0x03', '\\1=0x02')
+        .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0'),
+
+'vendor/bin/mi_thermald': blob_fixup()
+        .binary_regex_replace(b'%d/on', b'%d/..'),
+
+'vendor/etc/public.libraries.txt': blob_fixup()
+        .add_line_if_missing('libmpbase.so'),
+
+('vendor/lib64/libcodec2_mtk_vdec.so', 'vendor/lib64/libcodec2_mtk_venc.so', 'vendor/lib64/libcodec2_vpp_dolby_plugin.so'): blob_fixup()
+        .replace_needed('libcodec2_soft_common.so', 'libcodec2_soft_common-v31.so')
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk-v31.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

@@ -23,5 +23,5 @@ PRODUCT_MODEL := 23078RKD5C
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="corot-user 15 AP3A.240617.008 OS2.0.102.0.VMLCNXM release-keys" \
-    BuildFingerprint=Redmi/corot/corot:15/AP3A.240617.008/OS2.0.102.0.VMLCNXM:user/release-keys
+    BuildDesc="corot-user 16 BP2A.250605.031.A3 OS3.0.302.0.WMLCNXM release-keys" \
+    BuildFingerprint=Redmi/corot/corot:16/BP2A.250605.031.A3/OS3.0.302.0.WMLCNXM:user/release-keys
