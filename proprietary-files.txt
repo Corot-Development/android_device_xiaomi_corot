@@ -1077,6 +1077,7 @@ odm/lib64/libgf_hal.so
 vendor/lib64/hw/gatekeeper.mitee.so
 
 # GNSS
+vendor/lib64/mt6985/libmnl.so:vendor/lib64/mt6985/libmnl_mtk.so;SYMLINK=vendor/lib64/libmnl_mtk.so;FIX_SONAME
 vendor/bin/hw/android.hardware.gnss-service.mediatek
 vendor/bin/mnld
 vendor/bin/mtk_agpsd
