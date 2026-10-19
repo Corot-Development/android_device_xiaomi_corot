@@ -1,8 +1,5 @@
 # Unpinned blobs from corot-user 15 AP3A.240617.008 OS2.0.102.0.VMLCNXM release-keys
 
-# AEE
-vendor/lib64/libaedv.so
-
 # Audio
 vendor/etc/misound_asc_model.tflite
 vendor/etc/misound_res.bin
@@ -207,11 +204,9 @@ vendor/lib64/libbluetooth_mtk_pure.so
 vendor/lib64/libbt-vendor.so
 
 # Bluetooth (A2DP)
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Camera
+vendor/lib64/libMiPhotoFilter.so
 odm/lib64/libArcNetMtk.so
 odm/lib64/libalCFR.so
 odm/lib64/libarcsoft_beautyshot.so
@@ -646,7 +641,6 @@ vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libremosaiclib.so
 vendor/lib64/librfs_warp.so
 vendor/lib64/libvideoBokeh.so
-vendor/lib64/libvideofilter_only.so
 vendor/lib64/libwa_opticalzoomfactor.so
 vendor/lib64/libwa_sat.so
 vendor/lib64/vendor.mediatek.hardware.camera.aovservice-V1-ndk.so
@@ -865,10 +859,6 @@ vendor/firmware/txpowerctrl.cfg
 # ConsumerIR
 vendor/lib64/hw/consumerir.common.so
 
-# Chipinfo
-vendor/bin/chipinfo
-vendor/etc/init/chipinfo_init.rc
-
 # Display
 vendor/bin/hw/android.hardware.graphics.composer@3.1-service
 vendor/bin/hw/mt6985/android.hardware.graphics.allocator@4.0-service-mediatek.mt6985;SYMLINK=vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
@@ -919,9 +909,7 @@ vendor/lib64/libgralloc_extra.so
 vendor/lib64/libgralloc_metadata.so
 vendor/lib64/libgralloctypes_mtk.so
 vendor/lib64/libhdrvideo.so
-vendor/lib64/libion_mtk.so
 vendor/lib64/libion_ulit.so
-vendor/lib64/libladder.so
 vendor/lib64/libmml.so
 vendor/lib64/libpqframework.so
 vendor/lib64/libpqhdrmetaparser.so
@@ -1127,9 +1115,9 @@ vendor/lib64/hw/mtkgeofence.default.so
 vendor/lib64/librpc.so
 vendor/lib64/libviagpsrpc.so
 vendor/lib64/mt6985/libDR.so;SYMLINK=vendor/lib64/libDR.so
-vendor/lib64/mt6985/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
 
 # Keymint
+system/lib64/android.hardware.security.keymint-V4-ndk.so:vendor/lib64/android.hardware.security.keymint-V4-ndk-v34.so;FIX_SONAME
 vendor/bin/hw/android.hardware.identity-service.mitee@4.0
 vendor/bin/hw/android.hardware.security.keymint@2.0-service.mitee;DISABLE_DEPS
 vendor/etc/init/android.hardware.identity@4.0-service.mitee.rc
@@ -1141,6 +1129,14 @@ vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.mitee.xm
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.mitee.xml
 
 # Media (C2)
+vendor/lib64/libcodec2_hidl@1.0.so:vendor/lib64/libcodec2_hidl@1.0-v31.so;FIX_SONAME
+vendor/lib64/libcodec2_hidl@1.1.so:vendor/lib64/libcodec2_hidl@1.1-v31.so;FIX_SONAME
+vendor/lib64/libcodec2_hidl@1.2.so:vendor/lib64/libcodec2_hidl@1.2-v31.so;FIX_SONAME
+vendor/lib64/libcodec2_hidl_plugin.so:vendor/lib64/libcodec2_hidl_plugin-v31.so;FIX_SONAME
+vendor/lib64/libcodec2_soft_common.so:vendor/lib64/libcodec2_soft_common-v31.so;FIX_SONAME
+vendor/lib64/libcodec2_vndk.so:vendor/lib64/libcodec2_vndk-v31.so;FIX_SONAME;DISABLE_CHECKELF
+vendor/lib64/libsfplugin_ccodec_utils.so:vendor/lib64/libsfplugin_ccodec_utils-v31.so;FIX_SONAME
+system/lib64/libstagefright_bufferqueue_helper.so:vendor/lib64/libstagefright_bufferqueue_helper-v35.so;FIX_SONAME
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
 vendor/etc/init/android.hardware.media.c2@1.2-mediatek-64b.rc
 vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml:vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml
@@ -1163,7 +1159,7 @@ vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libdolbyeglplugin.so
 vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libdolbyplugin.so
-vendor/lib64/libformatter.so
+vendor/lib64/libformatter.so:vendor/lib64/libformatter_mtk.so;FIX_SONAME
 vendor/lib64/libmp3dec_mtk.so
 
 # Media (MMS)
@@ -1445,6 +1441,9 @@ vendor/etc/thermal-map.conf
 vendor/etc/thermald-devices.conf
 
 # Trusted Execution Environment (TEE)
+vendor/bin/mitee_info
+vendor/bin/mitee_shell
+vendor/lib64/libgz_gp_client.so
 vendor/bin/miteelog
 vendor/bin/tee-supplicant
 vendor/etc/init/miteelog.rc
@@ -1473,9 +1472,7 @@ vendor/firmware/aw8697_haptic.bin
 vendor/firmware/aw8697_rtp_1.bin
 
 # Wi-Fi
-vendor/bin/wlan_assistant
 vendor/etc/init/init.wlan_drv.rc
-vendor/etc/init/wlan_assistant.rc
 vendor/etc/wifi/passpointProfile.conf
 vendor/firmware/WIFI_MT6639_PATCH_MCU_1u_1_hdr.bin
 vendor/firmware/WIFI_RAM_CODE_MT6639_1u_1.bin
