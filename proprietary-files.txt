@@ -895,8 +895,12 @@ vendor/lib64/libNoFpsActor.so
 vendor/lib64/libaal_cust.so
 vendor/lib64/libaal_key.so
 vendor/lib64/libaal_mtk.so
+vendor/lib64/libai_pq.so
+vendor/lib64/libai_sdr2hdr.so
+vendor/lib64/libai_sdr2hdr_auth.so
 vendor/lib64/libaibld.nn6.so
 vendor/lib64/libaispq.so
+vendor/lib64/libapmonitor_vendor.so
 vendor/lib64/libappgamepq.so
 vendor/lib64/libclient2slpi.notifier.so
 vendor/lib64/libcomposer_ext.so
@@ -910,6 +914,7 @@ vendor/lib64/libgralloctypes_mtk.so
 vendor/lib64/libhdrvideo.so
 vendor/lib64/libion_ulit.so
 vendor/lib64/libmml.so
+vendor/lib64/libperfctl_vendor.so
 vendor/lib64/libpqframework.so
 vendor/lib64/libpqhdrmetaparser.so
 vendor/lib64/libpqsharememory.so
@@ -1646,7 +1651,11 @@ vendor/lib/libNoFpsActor.so
 vendor/lib/libaal_cust.so
 vendor/lib/libaal_key.so
 vendor/lib/libaal_mtk.so
+vendor/lib/libai_pq.so
+vendor/lib/libai_sdr2hdr.so
+vendor/lib/libai_sdr2hdr_auth.so
 vendor/lib/libaispq.so
+vendor/lib/libapmonitor_vendor.so
 vendor/lib/libappgamepq.so
 vendor/lib/libclient2slpi.notifier.so
 vendor/lib/libcomposer_ext.so
@@ -1660,6 +1669,7 @@ vendor/lib/libgralloctypes_mtk.so
 vendor/lib/libhdrvideo.so
 vendor/lib/libion_ulit.so
 vendor/lib/libmml.so
+vendor/lib/libperfctl_vendor.so
 vendor/lib/libpqframework.so
 vendor/lib/libpqhdrmetaparser.so
 vendor/lib/libpqsharememory.so
