@@ -9,6 +9,11 @@ DEVICE_PATH := device/xiaomi/corot
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 
+# Use corot's USB gadget configuration instead of the generic MediaTek rc.
+SOONG_CONFIG_NAMESPACES += mediatek_gadget
+SOONG_CONFIG_mediatek_gadget += use_custom_usb_gadget_rc
+SOONG_CONFIG_mediatek_gadget_use_custom_usb_gadget_rc := true
+
 # A/B
 AB_OTA_UPDATER := true
 
@@ -76,7 +81,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml
 
 # Kernel
-KERNEL_PREBUILTS_DIR := $(DEVICE_PATH)-kernel
+KERNEL_PREBUILTS_DIR := $(DEVICE_PATH)/prebuilt
 
 TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/corot
@@ -87,13 +92,13 @@ PRODUCT_COPY_FILES += \
 	$(KERNEL_PREBUILTS_DIR)/Image.gz:kernel
 
 # Kernel modules
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PREBUILTS_DIR)/modules.load))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load))
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(KERNEL_PREBUILTS_DIR)/modules/*.ko)
 
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PREBUILTS_DIR)/modules.load.vendor_ramdisk))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.vendor_boot))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_PREBUILTS_DIR)/modules/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
 
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PREBUILTS_DIR)/modules.load.recovery))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.recovery))
 RECOVERY_MODULES := $(addprefix $(KERNEL_PREBUILTS_DIR)/modules/, $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
 
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES) $(RECOVERY_MODULES))
