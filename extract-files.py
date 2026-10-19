@@ -165,6 +165,55 @@ blob_fixups: blob_fixups_user_type = {
 ('vendor/lib64/libcodec2_mtk_vdec.so', 'vendor/lib64/libcodec2_mtk_venc.so', 'vendor/lib64/libcodec2_vpp_dolby_plugin.so'): blob_fixup()
         .replace_needed('libcodec2_soft_common.so', 'libcodec2_soft_common-v31.so')
         .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk-v31.so'),
+
+
+'vendor/lib/hw/audio.primary.mediatek.so': blob_fixup()
+        .add_needed('libstagefright_foundation-v33.so')
+        .replace_needed('libalsautils.so', 'libalsautils-v33.so'),
+
+('vendor/lib/hw/hwcomposer.mtk_common.so', 'vendor/lib/libmialgoengine.so', 'vendor/lib/mt6985/lib3a.af.assist.so', 'vendor/lib/mt6985/libcam.hal3a.so', 'vendor/lib/mt6985/libcam.hal3a.ctrl.so', 'vendor/lib/mt6985/libmtkcam_cputrack.so', 'vendor/lib/mt6985/libmtkcam_request_requlator.so'): blob_fixup()
+        .add_needed('libprocessgroup_shim.so'),
+
+'vendor/lib/mt6985/libneuralnetworks_sl_driver_mtk_prebuilt.so': blob_fixup()
+         .clear_symbol_version('AHardwareBuffer_allocate')
+         .clear_symbol_version('AHardwareBuffer_createFromHandle')
+         .clear_symbol_version('AHardwareBuffer_describe')
+         .clear_symbol_version('AHardwareBuffer_getNativeHandle')
+         .clear_symbol_version('AHardwareBuffer_lock')
+         .clear_symbol_version('AHardwareBuffer_release')
+         .clear_symbol_version('AHardwareBuffer_unlock'),
+
+('vendor/lib/vendor.mediatek.hardware.pq_aidl-V1-ndk.so', 'vendor/lib/vendor.mediatek.hardware.pq_aidl-V2-ndk.so', 'vendor/lib/vendor.mediatek.hardware.pq_aidl-V3-ndk.so'): blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V3-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    ('vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk', 'vendor/lib/libnvram.so', 'vendor/lib/libtflite_mtk.so'): blob_fixup()
+        .add_needed('libbase_shim.so'),
+    ('vendor/lib/libcodec2_mtk_vdec.so', 'vendor/lib/libcodec2_mtk_venc.so'): blob_fixup()
+        .replace_needed('libformatter.so', 'libformatter_mtk.so'),
+
+('vendor/lib/mt6985/lib3a.flash.so',
+     'vendor/lib/mt6985/lib3a.sensors.color.so',
+     'vendor/lib/mt6985/lib3a.sensors.flicker.so'): blob_fixup()
+        .add_needed('liblog.so'),
+
+('vendor/lib/libcodec2_mtk_c2store.so', 'vendor/lib/libcodec2_vpp_gc_plugin.so', 'vendor/lib/libcodec2_vpp_qt_plugin.so', 'vendor/lib/libcodec2_vpp_rs_plugin.so'): blob_fixup()
+        .replace_needed('libcodec2_soft_common.so', 'libcodec2_soft_common-v31.so')
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk-v31.so')
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so')
+        .replace_needed('libsfplugin_ccodec_utils.so', 'libsfplugin_ccodec_utils-v31.so'),
+
+'vendor/lib/libdolbyplugin.so': blob_fixup()
+        .replace_needed('libcodec2_hidl@1.0.so', 'libcodec2_hidl@1.0-v31.so')
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk-v31.so')
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so')
+        .replace_needed('libui.so', 'libui-v32.so'),
+
+('vendor/lib/mt6985/libmtkcam_stdutils.so',
+     'vendor/lib/hw/mt6985/android.hardware.camera.provider@2.6-impl-mediatek.so'): blob_fixup()
+        .replace_needed('libutils.so', 'libutils-v32.so'),
+
+('vendor/lib/libcodec2_mtk_vdec.so', 'vendor/lib/libcodec2_mtk_venc.so', 'vendor/lib/libcodec2_vpp_dolby_plugin.so'): blob_fixup()
+        .replace_needed('libcodec2_soft_common.so', 'libcodec2_soft_common-v31.so')
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk-v31.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
