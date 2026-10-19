@@ -115,21 +115,10 @@ on property:sys.boot_completed=1
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
-service vendor.gralloc-4-0 /vendor/bin/hw/android.hardware.graphics.allocator@4.0-service
-    class hal animation
-    interface android.hardware.graphics.allocator@4.0::IAllocator default
-    user system
-    group graphics drmrpc
-    capabilities SYS_NICE
-    onrestart restart surfaceflinger
-    task_profiles ProcessCapacityHigh HighPerformance
-    override
-
-service vendor.hwcomposer-3-1 /vendor/bin/hw/android.hardware.graphics.composer@3.1-service
-    class hal animation
-    user system
-    group graphics drmrpc
-    capabilities SYS_NICE
-    onrestart restart surfaceflinger
-    task_profiles ProcessCapacityHigh HighPerformance
-    override
+# NOTE: vendor.gralloc-4-0 and vendor.hwcomposer-3-1 are defined by the
+# dedicated vendor rc files extracted from stock:
+#   android.hardware.graphics.allocator@4.0-service-mediatek.rc
+#   android.hardware.graphics.composer@3.1-service.rc
+# Do not redefine them here. The old definitions (from an older MTK release)
+# referenced a nonexistent allocator binary and shadowed the correct ones,
+# which left SurfaceFlinger waiting forever for the composer (blocked on gralloc).

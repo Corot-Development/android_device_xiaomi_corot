@@ -961,6 +961,7 @@ odm/etc/m12_36_02_0b_dsc_cmd_cust_silky_brightness.xml
 odm/etc/m12_36_02_0b_dsc_cmd_pq.xml
 odm/etc/m12_42_02_0a_dsc_cmd_cust_silky_brightness.xml
 odm/etc/m12_42_02_0a_dsc_cmd_pq.xml
+vendor/etc/cust_color.xml
 vendor/etc/cust_pq.xml
 vendor/etc/displayconfig/display_id_4627039422300187648.xml
 
