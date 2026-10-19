@@ -642,6 +642,7 @@ vendor/lib64/librfs_warp.so
 vendor/lib64/libvideoBokeh.so
 vendor/lib64/libwa_opticalzoomfactor.so
 vendor/lib64/libwa_sat.so
+vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.aovservice-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so
@@ -1614,6 +1615,7 @@ vendor/lib/libmibokeh_mt6873.so
 vendor/lib/libmivimemutils.so
 vendor/lib/libmtkcam_fdsan.so
 vendor/lib/libmtkcam_perfctrl_wrapper.so
+vendor/lib/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib/vendor.mediatek.hardware.camera.atms@1.0.so
 vendor/lib/vendor.mediatek.hardware.camera.bgservice@1.0.so
 vendor/lib/vendor.mediatek.hardware.camera.bgservice@1.1.so
