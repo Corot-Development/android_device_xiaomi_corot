@@ -24,8 +24,7 @@ type vendor_ir_spi_device, dev_type;
 type vendor_touchfeature_device, dev_type;
 
 # TEE
-type mitee_data_file, data_file_type, file_type;
-type proc_mitee_log, fs_type, proc_type;
+# (mitee_data_file and proc_mitee_log are declared in device/mediatek/sepolicy_vndr)
 
 # NFC
 type nfc_vendor_data_file, data_file_type, file_type;
