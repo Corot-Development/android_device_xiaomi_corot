@@ -3573,3 +3573,10 @@ vendor/lib64/vendor.xiaomi.hidl.miwill@1.0-impl.so
 vendor/lib64/vendor.xiaomi.hidl.miwill@1.0.so
 vendor/lib64/vendor.xiaomi.hw.touchfeature@1.0.so
 vendor/lib64/vendor.xiaomi.sensor.communicate@1.0.so
+
+# === system_ext interface libs needed by vendor services ===
+system_ext/lib64/vendor.mediatek.hardware.aee-V1-ndk.so:vendor/lib64/vendor.mediatek.hardware.aee-V1-ndk.so
+system_ext/lib/vendor.mediatek.hardware.aee-V1-ndk.so:vendor/lib/vendor.mediatek.hardware.aee-V1-ndk.so
+system_ext/lib64/vendor.mediatek.hardware.log-V1-ndk.so:vendor/lib64/vendor.mediatek.hardware.log-V1-ndk.so
+system_ext/lib64/vendor.xiaomi.hardware.misys.common-V3-ndk.so:vendor/lib64/vendor.xiaomi.hardware.misys.common-V3-ndk.so
+system_ext/lib64/vendor.xiaomi.hardware.misys.core-V1-ndk.so:vendor/lib64/vendor.xiaomi.hardware.misys.core-V1-ndk.so
