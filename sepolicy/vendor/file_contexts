@@ -147,9 +147,6 @@
 # TEE
 /vendor/bin/tee-supplicant u:object_r:tee_exec:s0
 /vendor/bin/miteelog u:object_r:tee_exec:s0
-/dev/tee0 u:object_r:teei_client_device:s0
-/dev/teepriv0 u:object_r:teei_client_device:s0
-/dev/ufs-bsg0 u:object_r:teei_client_device:s0
 
 # Thermal
 /vendor/bin/mi_thermald u:object_r:vendor_mi_thermald_exec:s0
