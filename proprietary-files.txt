@@ -2074,8 +2074,6 @@ odm/lib64/libtruetone.so
 odm/lib64/libvideomode.so
 odm/lib64/libvsim_mitee.so
 odm/lib64/nfc_nci.nqx.default.hw.so
-odm/lib64/temp/libmtkcam_hwutils.so
-odm/lib64/temp/libmtkcam_metadata.so
 odm/lib64/vendor.awa.wavelib.so
 odm/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 odm/lib64/vendor.xiaomi.hardware.mfidoca@1.0.so
