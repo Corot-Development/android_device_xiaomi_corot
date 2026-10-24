@@ -209,7 +209,6 @@ vendor/lib64/libbt-vendor.so
 vendor/lib64/libMiPhotoFilter.so
 odm/lib64/libArcNetMtk.so
 odm/lib64/libalCFR.so
-odm/lib64/libarcsoft_beautyshot.so
 odm/lib64/libarcsoft_high_dynamic_range.so
 odm/lib64/libarcsoft_low_light_hdr.so
 odm/lib64/libarcsoft_mf_superresolution.so
@@ -221,7 +220,6 @@ odm/lib64/libmiai_deblur.so
 odm/lib64/libmiai_portraitsupernight.so
 odm/lib64/libmialgo_ie_capture.so
 odm/lib64/libmiocr.so
-odm/lib64/libmpbase.so
 odm/lib64/libportrait_repair_apu.so
 vendor/bin/hw/mt6985/camerahalserver;SYMLINK=vendor/bin/hw/camerahalserver
 vendor/etc/init/camerahalserver.rc
@@ -2064,11 +2062,9 @@ odm/lib64/libmiBrightness.so
 odm/lib64/libmiSensorCtrl.so
 odm/lib64/libmiXmlParser.so
 odm/lib64/libmi_dspp.so
-odm/lib64/libmialgo_utils.so
 odm/lib64/libmiriskmanager_mitee.so
 odm/lib64/libpaperMode.so
 odm/lib64/libpwirisdisplayhal.so
-odm/lib64/librelight_only.so
 odm/lib64/librhytheyecare.so
 odm/lib64/libsdr2hdr.so
 odm/lib64/libsensor_cal@2.0.so
@@ -2079,15 +2075,8 @@ odm/lib64/libtruetone.so
 odm/lib64/libvideomode.so
 odm/lib64/libvsim_mitee.so
 odm/lib64/nfc_nci.nqx.default.hw.so
-odm/lib64/temp/libcamlog.so
-odm/lib64/temp/libcom.xiaomi.debug.so
-odm/lib64/temp/libcom.xiaomi.metadatautils.so
-odm/lib64/temp/libcom.xiaomi.mizone.postprocinterface.so
-odm/lib64/temp/libcom.xiaomi.pluginutils.so
 odm/lib64/temp/libmtkcam_hwutils.so
 odm/lib64/temp/libmtkcam_metadata.so
-odm/lib64/temp/mt6985/libmtkcam_hwutils.so
-odm/lib64/temp/mt6985/libmtkcam_metadata.so
 odm/lib64/vendor.awa.wavelib.so
 odm/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 odm/lib64/vendor.xiaomi.hardware.mfidoca@1.0.so
@@ -2519,7 +2508,6 @@ vendor/bin/autobt
 vendor/bin/bip_ap
 vendor/bin/bt_dump
 vendor/bin/cameratest
-vendor/bin/camsys_dump_tool
 vendor/bin/ccci_fsd
 vendor/bin/charge_logger
 vendor/bin/dc_cal
@@ -2532,7 +2520,6 @@ vendor/bin/dmc_core
 vendor/bin/doeapp-memtester
 vendor/bin/doeapp-sat
 vendor/bin/dtc_vendor
-vendor/bin/dumpfaultd.mt6985
 vendor/bin/eara_io_service
 vendor/bin/em_hidl
 vendor/bin/factory
@@ -2551,7 +2538,6 @@ vendor/bin/hw/android.hardware.audio.service.mediatek
 vendor/bin/hw/android.hardware.boot@1.2-service
 vendor/bin/hw/android.hardware.cas@1.2-service-lazy
 vendor/bin/hw/android.hardware.dumpstate-service.xiaomi
-vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek.mt6985
 vendor/bin/hw/android.hardware.health-service.example
 vendor/bin/hw/android.hardware.lights-service.mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
@@ -2559,9 +2545,7 @@ vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk-lazy
 vendor/bin/hw/android.hardware.usb-aidl-service.mediatekv1.0
 vendor/bin/hw/android.hardware.usb.gadget-service.mediatekv1.1
 vendor/bin/hw/android.hardware.wifi@1.0-service-lazy
-vendor/bin/hw/arm.mali.platform-service.mediatek.mt6985
 vendor/bin/hw/fbo-test
-vendor/bin/hw/mt6985/arm.mali.platform-service.mediatek.mt6985
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
 vendor/bin/hw/vendor.dolby.media.c2@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.aee@1.1-service
@@ -2594,7 +2578,6 @@ vendor/bin/iw-vendor
 vendor/bin/iwconfig
 vendor/bin/iwlist
 vendor/bin/iwpriv
-vendor/bin/jpegtool
 vendor/bin/lbs_hidl_service
 vendor/bin/loghidlvendorservice
 vendor/bin/mcfota_service
@@ -2606,9 +2589,6 @@ vendor/bin/mibpftest
 vendor/bin/minetd
 vendor/bin/mrdump_tool
 vendor/bin/mt6660_calibration
-vendor/bin/mt6985/camsys_dump_tool
-vendor/bin/mt6985/dumpfaultd.mt6985
-vendor/bin/mt6985/jpegtool
 vendor/bin/mtk_pkm_service
 vendor/bin/mtk_plpath_utils_ota
 vendor/bin/mtkconverter
@@ -3580,3 +3560,8 @@ system_ext/lib/vendor.mediatek.hardware.aee-V1-ndk.so:vendor/lib/vendor.mediatek
 system_ext/lib64/vendor.mediatek.hardware.log-V1-ndk.so:vendor/lib64/vendor.mediatek.hardware.log-V1-ndk.so
 system_ext/lib64/vendor.xiaomi.hardware.misys.common-V3-ndk.so:vendor/lib64/vendor.xiaomi.hardware.misys.common-V3-ndk.so
 system_ext/lib64/vendor.xiaomi.hardware.misys.core-V1-ndk.so:vendor/lib64/vendor.xiaomi.hardware.misys.core-V1-ndk.so
+vendor/bin/hw/mt6985/android.hardware.graphics.allocator@4.0-service-mediatek.mt6985;SYMLINK=vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek.mt6985
+vendor/bin/hw/mt6985/arm.mali.platform-service.mediatek.mt6985;SYMLINK=vendor/bin/hw/arm.mali.platform-service.mediatek.mt6985
+vendor/bin/mt6985/camsys_dump_tool;SYMLINK=vendor/bin/camsys_dump_tool
+vendor/bin/mt6985/dumpfaultd.mt6985;SYMLINK=vendor/bin/dumpfaultd.mt6985
+vendor/bin/mt6985/jpegtool;SYMLINK=vendor/bin/jpegtool
