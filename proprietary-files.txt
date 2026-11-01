@@ -2462,7 +2462,6 @@ vendor/bin/gsm0710muxd
 vendor/bin/hostapd_cli
 vendor/bin/hw/android.hardware.boot@1.2-service
 vendor/bin/hw/android.hardware.dumpstate-service.xiaomi
-vendor/bin/hw/android.hardware.lights-service.mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk-lazy
 vendor/bin/hw/android.hardware.usb-aidl-service.mediatekv1.0
@@ -2641,7 +2640,6 @@ vendor/etc/hrtf5c.bin
 vendor/etc/init/aee_aedv64_v2.rc
 vendor/etc/init/android.hardware.audio.service.mediatek.rc
 vendor/etc/init/android.hardware.boot@1.2-service.rc
-vendor/etc/init/android.hardware.health-service.example.rc
 vendor/etc/init/android.hardware.usb-aidl-service.mediatek.rc
 vendor/etc/init/android.hardware.usb.gadget-service.mediatek.rc
 vendor/etc/init/android.hardware.wifi@1.0-service-lazy.rc
@@ -2687,7 +2685,6 @@ vendor/etc/init/init.vendor.ins.rc
 vendor/etc/init/init.vtservice_hidl.rc
 vendor/etc/init/ipsec_mon.rc
 vendor/etc/init/lbs_hidl_service.rc
-vendor/etc/init/lights-mtk-default.rc
 vendor/etc/init/mcfota_service.rc
 vendor/etc/init/mi_ic.rc
 vendor/etc/init/mi_ric.rc
@@ -3091,7 +3088,6 @@ vendor/etc/task_profiles.json
 vendor/etc/thermalbreakboostconfig.xml
 vendor/etc/throttle.sh
 vendor/etc/vintf/manifest/android.hardware.boot@1.2.xml
-vendor/etc/vintf/manifest/android.hardware.health-service.example.xml
 vendor/etc/vintf/manifest/android.hardware.usb-aidl-service.mediatek.xml
 vendor/etc/vintf/manifest/android.hardware.usb.gadget-service.mediatek.xml
 vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
@@ -3099,13 +3095,11 @@ vendor/etc/vintf/manifest/arm.mali.platform-mediatek.xml
 vendor/etc/vintf/manifest/dumpstate-xiaomi.xml
 vendor/etc/vintf/manifest/em_hal_service.xml
 vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
-vendor/etc/vintf/manifest/lights-mtk-default.xml
 vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.cld.xml
 vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.fbo.xml
 vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.otrpagent@2.0.xml
 vendor/etc/vintf/manifest/mtkgnss-batching.xml
 vendor/etc/vintf/manifest/mtkpower_applist-mtk-default.xml
-vendor/etc/vintf/manifest/power-mediatek.xml
 vendor/etc/vintf/manifest/vendor.dolby.hardware.dms.xml
 vendor/etc/vintf/manifest/vendor.dolby.media.c2@1.0-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.cit.wifi@1.0_manifest.xml
