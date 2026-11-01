@@ -3194,7 +3194,6 @@ vendor/lib/libpkm.so
 vendor/lib/libpower_timer.so
 vendor/lib/libpowerhal.so
 vendor/lib/libpowerhalwrap_vendor.so
-vendor/lib/libprotobuf-cpp-full-3.9.1.so
 vendor/lib/librcs_interface.so
 vendor/lib/librcs_volte_core.so
 vendor/lib/libsimlock.so
@@ -3354,7 +3353,6 @@ vendor/lib64/libpkm.so
 vendor/lib64/libpower_timer.so
 vendor/lib64/libpowerhal.so
 vendor/lib64/libpowerhalwrap_vendor.so
-vendor/lib64/libprotobuf-cpp-full-3.9.1.so
 vendor/lib64/mt6985/libqos_extension.so;SYMLINK=vendor/lib64/libqos_extension.so
 vendor/lib64/librcs_interface.so
 vendor/lib64/librcs_volte_core.so
