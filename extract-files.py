@@ -39,8 +39,31 @@ namespace_imports = [
     'hardware/xiaomi',
 ]
 
+def remove_shared(*libs):
+    def _fix(lib, *args, **kwargs):
+        return '' if lib in libs else lib
+    return _fix
+
+
+AUTO_LIB_FIXUPS = {
+    # <BEGIN AUTO FIXUPS>
+    'libaed': remove_shared('libaed'),
+    'libccci_util_sys': remove_shared('libccci_util_sys'),
+    'libgnutls': remove_shared('libgnutls'),
+    'libmdloggerrecycle': remove_shared('libmdloggerrecycle'),
+    'libmemoryDumpEncoder': remove_shared('libmemoryDumpEncoder'),
+    'libmiphone_preview_bokeh': remove_shared('libmiphone_preview_bokeh'),
+    'libmtk_vt_service': remove_shared('libmtk_vt_service'),
+    'libpcap_bak': remove_shared('libpcap_bak'),
+    'libquic': remove_shared('libquic'),
+    'libshell_jni': remove_shared('libshell_jni'),
+    'libshellservice': remove_shared('libshellservice'),
+    # <END AUTO FIXUPS>
+}
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
+    **AUTO_LIB_FIXUPS,
 }
 
 blob_fixups: blob_fixups_user_type = {
