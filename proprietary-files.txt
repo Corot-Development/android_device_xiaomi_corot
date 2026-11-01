@@ -2464,7 +2464,6 @@ vendor/bin/hw/android.hardware.boot@1.2-service
 vendor/bin/hw/android.hardware.dumpstate-service.xiaomi
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk-lazy
-vendor/bin/hw/android.hardware.usb-aidl-service.mediatekv1.0
 vendor/bin/hw/android.hardware.usb.gadget-service.mediatekv1.1
 vendor/bin/hw/android.hardware.wifi@1.0-service-lazy
 vendor/bin/hw/fbo-test
@@ -2640,7 +2639,6 @@ vendor/etc/hrtf5c.bin
 vendor/etc/init/aee_aedv64_v2.rc
 vendor/etc/init/android.hardware.audio.service.mediatek.rc
 vendor/etc/init/android.hardware.boot@1.2-service.rc
-vendor/etc/init/android.hardware.usb-aidl-service.mediatek.rc
 vendor/etc/init/android.hardware.usb.gadget-service.mediatek.rc
 vendor/etc/init/android.hardware.wifi@1.0-service-lazy.rc
 vendor/etc/init/arm.mali.platform-mediatek.rc
@@ -3088,7 +3086,6 @@ vendor/etc/task_profiles.json
 vendor/etc/thermalbreakboostconfig.xml
 vendor/etc/throttle.sh
 vendor/etc/vintf/manifest/android.hardware.boot@1.2.xml
-vendor/etc/vintf/manifest/android.hardware.usb-aidl-service.mediatek.xml
 vendor/etc/vintf/manifest/android.hardware.usb.gadget-service.mediatek.xml
 vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
 vendor/etc/vintf/manifest/arm.mali.platform-mediatek.xml
