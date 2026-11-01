@@ -47,6 +47,7 @@ def remove_shared(*libs):
 
 AUTO_LIB_FIXUPS = {
     # <BEGIN AUTO FIXUPS>
+    'libomp': remove_shared('libomp'),
     'libaed': remove_shared('libaed'),
     'libccci_util_sys': remove_shared('libccci_util_sys'),
     'libgnutls': remove_shared('libgnutls'),
