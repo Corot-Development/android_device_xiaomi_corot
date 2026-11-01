@@ -630,7 +630,6 @@ vendor/lib64/libmtkcam_fdsan.so
 vendor/lib64/libmtkcam_fdsan_wrapper.so
 vendor/lib64/libmtkcam_perfctrl_wrapper.so
 vendor/lib64/libmtkisp_metadata_v2.so
-vendor/lib64/libomp.so
 vendor/lib64/librelight_only.so
 vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libremosaiclib.so
@@ -1774,7 +1773,6 @@ odm/lib/libmt_mitee.so
 vendor/lib/libapu_mdw.so
 vendor/lib/libapu_mdw_batch.so
 vendor/lib/libapusys.so
-vendor/lib/libarmnn.so
 vendor/lib/libarmnn_ndk.mtk.vndk.so
 vendor/lib/libcmdl.so
 vendor/lib/libcmdl_ndk.mtk.vndk.so
@@ -3236,7 +3234,6 @@ vendor/lib/libvcodec_utility_plat.mt6886.so
 vendor/lib/libvcodec_utility_plat.mt6985.so
 vendor/lib/mt6985/libvcodecdrv.so;SYMLINK=vendor/lib/libvcodecdrv.so
 vendor/lib/libvcodecdrv_header_stub.so
-vendor/lib/libvibrator.so
 vendor/lib/libvp8dec_sa.ca7.so
 vendor/lib/libvp8enc_sa.ca7.so
 vendor/lib/libvp9dec_sa.ca7.so
@@ -3271,8 +3268,6 @@ vendor/lib/vendor.xiaomi.hidl.minet@1.0.so
 vendor/lib/vendor.xiaomi.hidl.miwill@1.0-impl.so
 vendor/lib/vendor.xiaomi.hidl.miwill@1.0.so
 vendor/lib64/com.fingerprints.extension@3.0.so
-vendor/lib64/hw/audio.r_submix.default.so
-vendor/lib64/hw/audio_policy.stub.so
 vendor/lib64/hw/libSoftGatekeeper.so;SYMLINK=vendor/lib64/hw/gatekeeper.default.so
 vendor/lib64/hw/mtkflp.default.so
 vendor/lib64/hw/thermal_hal.so
@@ -3329,8 +3324,6 @@ vendor/lib64/libfgauge_gm30.so
 vendor/lib64/mt6985/libgpudataproducer.so;SYMLINK=vendor/lib64/libgpudataproducer.so
 vendor/lib64/libhevce_sb.ca7.android.so
 vendor/lib64/libhfmanagerwrapper.so
-vendor/lib64/libhwc2on1adapter.so
-vendor/lib64/libhwc2onfbadapter.so
 vendor/lib64/libicd_decoder.so
 vendor/lib64/libimgsensorca.so
 vendor/lib64/libipsec_ims_shr.so
@@ -3365,7 +3358,6 @@ vendor/lib64/libprotobuf-cpp-full-3.9.1.so
 vendor/lib64/mt6985/libqos_extension.so;SYMLINK=vendor/lib64/libqos_extension.so
 vendor/lib64/librcs_interface.so
 vendor/lib64/librcs_volte_core.so
-vendor/lib64/libsensorndkbridge.so
 vendor/lib64/libsimlock.so
 vendor/lib64/libsimmelock.so
 vendor/lib64/libspatializerparamstorage.so
