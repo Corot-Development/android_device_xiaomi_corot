@@ -1122,6 +1122,7 @@ vendor/bin/hw/android.hardware.identity-service.mitee@4.0
 vendor/bin/hw/android.hardware.security.keymint@2.0-service.mitee;DISABLE_DEPS
 vendor/etc/init/android.hardware.identity@4.0-service.mitee.rc
 vendor/etc/init/android.hardware.security.keymint.mitee@2.0-service.rc
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service.mitee.xml
 vendor/etc/permissions/android.hardware.hardware_keystore.xml:vendor/etc/permissions/android.hardware.hardware_keystore.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.identity@4.0-service.mitee.xml
 
